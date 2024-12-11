@@ -1,0 +1,174 @@
+﻿@page
+@model InventorySandbox.Pages.Pharmacy.TransactionPages.CreateModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="my-4">Transaction Create</h1>
+
+<!-- Bootstrap Tabs for Transaction and Transaction Detail -->
+<ul class="nav nav-tabs" id="transactionTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="transaction-tab" data-bs-toggle="tab" href="#transaction" role="tab" aria-controls="transaction" aria-selected="true">Transaction</a>
+    </li>
+    <li class="nav-item" role="presentation">
+        <a class="nav-link" id="transactionDetail-tab" data-bs-toggle="tab" href="#transactionDetail" role="tab" aria-controls="transactionDetail" aria-selected="false">Transaction Details</a>
+    </li>
+</ul>
+<div class="tab-content" id="transactionTabsContent">
+    <!-- Transaction Tab -->
+    <div class="tab-pane fade show active" id="transaction" role="tabpanel" aria-labelledby="transaction-tab">
+        <h4>Transaction Information</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Transaction.DocumentNumber" class="control-label"></label>
+                        <input asp-for="Transaction.DocumentNumber" class="form-control" />
+                        <span asp-validation-for="Transaction.DocumentNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Transaction.DocumentDate" class="control-label"></label>
+                        <input asp-for="Transaction.DocumentDate" type="date" class="form-control" />
+                        <span asp-validation-for="Transaction.DocumentDate" class="text-danger"></span>
+                    </div>
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Detail Tab -->
+    <div class="tab-pane fade" id="transactionDetail" role="tabpanel" aria-labelledby="transactionDetail-tab">
+        <h4>Transaction Details</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <!-- Transaction Details Table/Grid -->
+                    <table id="transactionDetailsTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Medication</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (var i = 0; i < Model.TransactionDetails.Count; i++)
+                            {
+                                <tr>
+                                    <td>
+                                        <select asp-for="TransactionDetails[@i].MedicationId" class="form-control">
+                                            <option value="" selected disabled>Select an Item</option>
+                                            @foreach (var Medication in ViewBag.MedicationList)
+                                            {
+                                                <option value="@Medication.Value">@Medication.Text</option>
+                                            }
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input asp-for="TransactionDetails[@i].Qty" class="form-control" type="number" />
+                                    </td>
+                                    <td>
+                                        <input asp-for="TransactionDetails[@i].Price" class="form-control" type="number" step="0.01" />
+                                    </td>
+
+                                    <!-- Remove Row Button with Icon -->
+                                    <button type="button" class="btn btn-danger remove-row">
+                                        <i class="fas fa-trash-alt"></i> Remove
+                                    </button>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <!-- Add New Row Button with Icon -->
+                    <button type="button" id="addRow" class="btn btn-success">
+                        <i class="fas fa-plus"></i> Add Row
+                    </button>
+
+                    <br /><br />
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Submit Button -->
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-save"></i> Save
+    </button>
+    <a class="btn btn-secondary" asp-page="./Index">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>
+
+<!-- Hidden Medication List for JavaScript -->
+<div id="medicationList" style="display:none;">
+    @foreach (var medication in ViewBag.MedicationList)
+    {
+        <span data-value="@medication.Value" data-text="@medication.Text"></span>
+    }
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Add new row to table
+            $('#addRow').click(function () {
+                var newRow = `
+                            <tr>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="" selected disabled>Select an Item</option>
+                                        `;
+
+                // Fetch medications from hidden div and append them to the select dropdown
+                $('#medicationList span').each(function () {
+                    var value = $(this).data('value');
+                    var text = $(this).data('text');
+                    newRow += `<option value="${value}">${text}</option>`;
+                });
+
+                newRow += `
+                                </select>
+                            </td>
+                            <td>
+                                <input class="form-control" type="number" />
+                            </td>
+                            <td>
+                                <input class="form-control" type="number" step="0.01" />
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger remove-row">
+                                        <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>`;
+
+                // Append the new row to the table
+                $('#transactionDetailsTable tbody').append(newRow);
+            });
+
+            // Remove row from table
+            $(document).on('click', '.remove-row', function () {
+                $(this).closest('tr').remove();
+            });
+        });
+    </script>
+}

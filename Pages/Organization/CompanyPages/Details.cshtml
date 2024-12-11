@@ -1,0 +1,71 @@
+﻿@page
+@model InventorySandbox.Pages.Organization.CompanyPages.DetailsModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="my-4">Company Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Company Information</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">
+                Kode Perusahaan
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Company.Code)
+            </dd>
+            <dt class="col-sm-3">
+                Nama Perusahaan
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Company.Name)
+            </dd>
+            <dt class="col-sm-3">
+                Keterangan
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Company.Note)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Company.CreatedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.Company.CreatedDate != null ? Model.Company.CreatedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+            <dt class="col-sm-3">
+                Diubah oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Company.ModifiedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Diubah tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.Company.ModifiedDate != null ? Model.Company.ModifiedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<!-- Action buttons with Bootstrap styling -->
+<div class="mt-3">
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.Company.Id">
+        <i class="fas fa-edit"></i> Edit
+    </a>
+    <a class="btn btn-secondary" asp-page="./Index">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>

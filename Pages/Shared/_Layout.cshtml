@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sandbox App</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InventorySandbox.styles.css" asp-append-version="true" />
+    <!-- Add this in the <head> section of your layout file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS (requires jQuery) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container">
+                <!-- Brand -->
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Sandbox App</a>
+
+                <!-- Toggler for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Profile Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProfile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownProfile">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Identity/ApplicationUserPages/Index">Application User</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Human Resource Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHR" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-users"></i> Human Resource
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownHR">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/HumanResource/EmployeePages/Index">Employee</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Organization Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOrganization" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-building"></i> Organization
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownOrganization">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Organization/CompanyPages/Index">Company</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Pharmacy Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPharmacy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-pills"></i> Pharmacy
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownPharmacy">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Pharmacy/MedicationPages/Index">Medicine</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Pharmacy/SalePages/Index">Sale</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Pharmacy/SupplierPages/Index">Supplier</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Pharmacy/TransactionPages/Index">Transaction</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - SandboxApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer> *@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

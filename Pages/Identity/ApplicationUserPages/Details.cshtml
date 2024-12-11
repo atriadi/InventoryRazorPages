@@ -1,0 +1,77 @@
+﻿@page
+@model InventorySandbox.Pages.Identity.ApplicationUserPages.DetailsModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="my-4">ApplicationUser Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">ApplicationUser Information</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">
+                Nama Lengkap
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ApplicationUser.FirstName) - @Html.DisplayFor(model => model.ApplicationUser.LastName)
+            </dd>
+            <dt class="col-sm-3">
+                IsAzureUser
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ApplicationUser.IsAzureUser)
+            </dd>
+            <dt class="col-sm-3">
+                Username
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ApplicationUser.UserName)
+            </dd>
+            <dt class="col-sm-3">
+                Email
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ApplicationUser.Email)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ApplicationUser.CreatedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.ApplicationUser.CreatedDate != null ? Model.ApplicationUser.CreatedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+            <dt class="col-sm-3">
+                Diubah oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ApplicationUser.ModifiedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Diubah tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.ApplicationUser.ModifiedDate != null ? Model.ApplicationUser.ModifiedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<!-- Action buttons with Bootstrap styling -->
+<div class="mt-3">
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.ApplicationUser.Id">
+        <i class="fas fa-edit"></i> Edit
+    </a>
+    <a class="btn btn-secondary" asp-page="./Index">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>

@@ -1,0 +1,83 @@
+﻿@page
+@model InventorySandbox.Pages.Organization.CompanyPages.CreateModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="my-4">Company Create</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <!-- Validation Summary -->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Company.Code" class="control-label">Kode Perusahaan</label>
+                <input asp-for="Company.Code" class="form-control" />
+                <span asp-validation-for="Company.Code" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Company.Name" class="control-label">Nama Perusahaan</label>
+                <input asp-for="Company.Name" class="form-control" />
+                <span asp-validation-for="Company.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Company.Note" class="control-label">Keterangan</label>
+                <input asp-for="Company.Note" class="form-control" />
+                <span asp-validation-for="Company.Note" class="text-danger"></span>
+            </div>
+
+            <br />
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <a class="btn btn-secondary" asp-page="./Index">
+                    <i class="fas fa-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal for Status Message -->
+<div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="statusModalLabel">Status</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @if (!string.IsNullOrEmpty(Model.MessageHelper.StatusMessage))
+                {
+                    <p>@Model.MessageHelper.StatusMessage</p>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            // Show the modal if there is a status message
+            if ('@Model.MessageHelper.StatusMessage'.length > 0) {
+                $('#statusModal').modal('show');
+            }
+        });
+    </script>
+}

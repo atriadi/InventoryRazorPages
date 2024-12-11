@@ -1,0 +1,65 @@
+﻿@page
+@model InventorySandbox.Pages.Pharmacy.SupplierPages.CreateModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="my-4">Supplier Create</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <!-- Validation Summary -->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Supplier.Code" class="control-label">Kode Supplier</label>
+                <input asp-for="Supplier.Code" class="form-control" />
+                <span asp-validation-for="Supplier.Code" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Supplier.Name" class="control-label">Nama Supplier</label>
+                <input asp-for="Supplier.Name" class="form-control" />
+                <span asp-validation-for="Supplier.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Supplier.Note" class="control-label">Keterangan</label>
+                <input asp-for="Supplier.Note" class="form-control" />
+                <span asp-validation-for="Supplier.Note" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Supplier.PhoneNumber" class="control-label">No. Telp</label>
+                <input asp-for="Supplier.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Supplier.PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Supplier.Address" class="control-label">Alamat</label>
+                <input asp-for="Supplier.Address" class="form-control" />
+                <span asp-validation-for="Supplier.Address" class="text-danger"></span>
+            </div>
+
+            <br />
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <a class="btn btn-secondary" asp-page="./Index">
+                    <i class="fas fa-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

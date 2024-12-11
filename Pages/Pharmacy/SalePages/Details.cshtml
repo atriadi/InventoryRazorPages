@@ -1,0 +1,77 @@
+﻿@page
+@model InventorySandbox.Pages.Pharmacy.SalePages.DetailsModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="my-4">Sale Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Sale Information</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">
+                Kode Item
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Sale.Medication.Code) -  @Html.DisplayFor(model => model.Sale.Medication.Name)
+            </dd>
+            <dt class="col-sm-3">
+                Tanggal Pembayaran
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.Sale.DocumentDate.ToString("dd-MMM-yyyy"))</p>
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Sale.Qty)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Sale.Qty)
+            </dd>
+            <dt class="col-sm-3">
+                Harga
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Sale.Price)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Sale.CreatedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.Sale.CreatedDate != null ? Model.Sale.CreatedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+            <dt class="col-sm-3">
+                Diubah oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Sale.ModifiedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Diubah tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.Sale.ModifiedDate != null ? Model.Sale.ModifiedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<!-- Action buttons with Bootstrap styling -->
+<div class="mt-3">
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.Sale.Id">
+        <i class="fas fa-edit"></i> Edit
+    </a>
+    <a class="btn btn-secondary" asp-page="./Index">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>

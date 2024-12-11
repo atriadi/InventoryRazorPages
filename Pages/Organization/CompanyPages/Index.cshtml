@@ -1,0 +1,158 @@
+﻿@page
+@model InventorySandbox.Pages.Organization.CompanyPages.IndexModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="my-4">Company List</h1>
+
+<!-- Search Form -->
+<div class="mb-4">
+    <form method="get" class="d-flex">
+        <input type="text" name="searchQuery" class="form-control form-control-sm me-2" placeholder="Search" value="@Request.Query["searchQuery"]" />
+        <button type="submit" class="btn btn-primary btn-sm">
+            <i class="fas fa-search"></i> Search
+        </button>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-download"></i> Export
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+            <li>
+                <button id="btnExportPdf" class="dropdown-item">
+                    <i class="fas fa-file-pdf"></i> Export to PDF
+                </button>
+            </li>
+            <li>
+                <button id="btnExportExcel" class="dropdown-item">
+                    <i class="fas fa-file-excel"></i> Export to Excel
+                </button>
+            </li>
+        </ul>
+    </form>
+</div>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">
+        <i class="fas fa-plus"></i> New
+    </a>
+</p>
+
+<table id="headTable" class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Kode Perusahaan
+            </th>
+            <th>
+                Nama Perusahaan
+            </th>
+            <th>
+                Keterangan
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Company)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Note)
+                </td>
+                <td>
+                    <!-- Edit Button with Icon -->
+                    <a class="btn btn-warning btn-sm" asp-page="./Edit" asp-route-id="@item.Id">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <!-- Details Button with Icon -->
+                    <a class="btn btn-info btn-sm" asp-page="./Details" asp-route-id="@item.Id">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
+                    <!-- Delete Button with Icon -->
+                    <a class="btn btn-danger btn-sm" asp-page="./Delete" asp-route-id="@item.Id">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-between">
+    <div>
+        <span>Page @Model.CurrentPage of @Model.TotalPages</span>
+    </div>
+
+    <div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                @if (Model.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Index" asp-route-pageNumber="@(Model.CurrentPage - 1)">Previous</a>
+                    </li>
+                }
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                        <a class="page-link" asp-page="./Index" asp-route-pageNumber="@i">@i</a>
+                    </li>
+                }
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-page="./Index" asp-route-pageNumber="@(Model.CurrentPage + 1)">Next</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPDF/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- jsPDF AutoTable Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- xlsx and FileSaver -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Export to PDF Button
+            document.getElementById('btnExportPdf').addEventListener('click', function () {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                doc.text('Company List', 14, 22);
+
+                const table = document.getElementById('headTable');
+                if (table) {
+                    doc.autoTable({ html: table });
+                    doc.save('company-list.pdf');
+                } else {
+                    console.error('Table not found!');
+                }
+            });
+
+            // Export to Excel Button
+            document.getElementById('btnExportExcel').addEventListener('click', function () {
+                const table = document.getElementById('headTable');
+                const wb = XLSX.utils.table_to_book(table, { sheet: "Company List" });
+                const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+
+                saveAs(new Blob([wbout], { type: "application/octet-stream" }), "company-list.xlsx");
+            });
+        });
+    </script>
+}

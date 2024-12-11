@@ -1,0 +1,83 @@
+﻿@page
+@model InventorySandbox.Pages.Pharmacy.SupplierPages.DetailsModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="display-4">Supplier Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Supplier Information</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">
+                Kode Supplier
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Supplier.Code)
+            </dd>
+            <dt class="col-sm-3">
+                Nama Supplier
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Supplier.Name)
+            </dd>
+            <dt class="col-sm-3">
+                Keterangan
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Supplier.Note)
+            </dd>
+            <dt class="col-sm-3">
+                No. Telp
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Supplier.PhoneNumber)
+            </dd>
+            <dt class="col-sm-3">
+                Alamat
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Supplier.Address)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Supplier.CreatedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Dibuat tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.Supplier.CreatedDate != null ? Model.Supplier.CreatedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+            <dt class="col-sm-3">
+                Diubah oleh
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Supplier.ModifiedUser)
+            </dd>
+            <dt class="col-sm-3">
+                Diubah tanggal
+            </dt>
+            <dd class="col-sm-9">
+                <p>@(Model.Supplier.ModifiedDate != null ? Model.Supplier.ModifiedDate.Value.ToString("dd-MMM-yyyy hh:mm:ss") : "Date not available")</p>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<!-- Action buttons with Bootstrap styling -->
+<div class="mt-3">
+    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@Model.Supplier.Id">
+        <i class="fas fa-edit"></i> Edit
+    </a>
+    <a class="btn btn-secondary" asp-page="./Index">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</div>

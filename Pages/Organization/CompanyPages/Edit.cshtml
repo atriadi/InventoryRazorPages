@@ -1,0 +1,45 @@
+﻿@page
+@model InventorySandbox.Pages.Organization.CompanyPages.EditModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="my-4">Company Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Company.Code" class="control-label">Kode Perusahaan</label>
+                <input asp-for="Company.Code" class="form-control" />
+                <span asp-validation-for="Company.Code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Name" class="control-label">Nama Perusahaan</label>
+                <input asp-for="Company.Name" class="form-control" />
+                <span asp-validation-for="Company.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.Note" class="control-label">Keterangan</label>
+                <input asp-for="Company.Note" class="form-control" />
+                <span asp-validation-for="Company.Note" class="text-danger"></span>
+            </div>
+            <br />
+            <input type="hidden" asp-for="Company.Id" />
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Save
+            </button>
+            <a class="btn btn-secondary" asp-page="./Index">
+                <i class="fas fa-arrow-left"></i> Back to List
+            </a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

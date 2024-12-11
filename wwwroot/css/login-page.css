@@ -1,0 +1,65 @@
+﻿/* Full viewport height to center the login card */
+.login-container {
+    height: 100vh;
+}
+
+/* Center the login card with flexbox */
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+}
+
+/* Card Shadow and Rounded Corners */
+.login-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Input Field Styles */
+.form-control-lg {
+    height: calc(2.5rem + 2px);
+    font-size: 1.1rem;
+}
+
+/* Button Styles */
+.btn-lg {
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}
+
+/* Button Hover Effect */
+.btn-primary {
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Responsive Layout for Small Screens */
+@media (max-width: 576px) {
+    .login-card {
+        padding: 2rem;
+    }
+
+    .btn-lg {
+        font-size: 1.125rem;
+    }
+}
+
+/* Fade-in Animation for the Page */
+.login-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

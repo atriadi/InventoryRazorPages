@@ -1,0 +1,199 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = InventorySandbox
+build_property.RootNamespace = InventorySandbox
+build_property.ProjectDir = C:\RISET\InventorySandbox\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\RISET\InventorySandbox
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/RISET/InventorySandbox/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/HumanResource/EmployeePages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSHVtYW5SZXNvdXJjZVxFbXBsb3llZVBhZ2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/HumanResource/EmployeePages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSHVtYW5SZXNvdXJjZVxFbXBsb3llZVBhZ2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/HumanResource/EmployeePages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSHVtYW5SZXNvdXJjZVxFbXBsb3llZVBhZ2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/HumanResource/EmployeePages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSHVtYW5SZXNvdXJjZVxFbXBsb3llZVBhZ2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/HumanResource/EmployeePages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSHVtYW5SZXNvdXJjZVxFbXBsb3llZVBhZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Identity/ApplicationUserLoginPages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcQXBwbGljYXRpb25Vc2VyTG9naW5QYWdlc1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Identity/ApplicationUserPages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcQXBwbGljYXRpb25Vc2VyUGFnZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Identity/ApplicationUserPages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcQXBwbGljYXRpb25Vc2VyUGFnZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Identity/ApplicationUserPages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcQXBwbGljYXRpb25Vc2VyUGFnZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Identity/ApplicationUserPages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcQXBwbGljYXRpb25Vc2VyUGFnZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Identity/ApplicationUserPages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSWRlbnRpdHlcQXBwbGljYXRpb25Vc2VyUGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Organization/CompanyPages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JnYW5pemF0aW9uXENvbXBhbnlQYWdlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Organization/CompanyPages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JnYW5pemF0aW9uXENvbXBhbnlQYWdlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Organization/CompanyPages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JnYW5pemF0aW9uXENvbXBhbnlQYWdlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Organization/CompanyPages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JnYW5pemF0aW9uXENvbXBhbnlQYWdlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Organization/CompanyPages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JnYW5pemF0aW9uXENvbXBhbnlQYWdlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/MedicationPages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcTWVkaWNhdGlvblBhZ2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/MedicationPages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcTWVkaWNhdGlvblBhZ2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/MedicationPages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcTWVkaWNhdGlvblBhZ2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/MedicationPages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcTWVkaWNhdGlvblBhZ2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/MedicationPages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcTWVkaWNhdGlvblBhZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SalePages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU2FsZVBhZ2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SalePages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU2FsZVBhZ2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SalePages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU2FsZVBhZ2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SalePages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU2FsZVBhZ2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SalePages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU2FsZVBhZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SupplierPages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU3VwcGxpZXJQYWdlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SupplierPages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU3VwcGxpZXJQYWdlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SupplierPages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU3VwcGxpZXJQYWdlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SupplierPages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU3VwcGxpZXJQYWdlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/SupplierPages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcU3VwcGxpZXJQYWdlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/TransactionPages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcVHJhbnNhY3Rpb25QYWdlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/TransactionPages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcVHJhbnNhY3Rpb25QYWdlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/TransactionPages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcVHJhbnNhY3Rpb25QYWdlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/TransactionPages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcVHJhbnNhY3Rpb25QYWdlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Pharmacy/TransactionPages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGhhcm1hY3lcVHJhbnNhY3Rpb25QYWdlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/RISET/InventorySandbox/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nruzh3i0ip
